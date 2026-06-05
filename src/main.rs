@@ -30,4 +30,20 @@ enum Commands{
 
 fn main() {
   
+  let cli =Cli::parse();
+
+  match cli.command{
+    Commands::Add {url}=>{
+        println!("Adding bookmark: {}",url);
+    }
+    Commands::List=>{
+        println!("Listing all bookmarks...");
+    }
+
+    Commands::Search {query}=>{
+        println!("Searching for bookmarks matching: {}",query);
+    }
+
+  }
+
 }
